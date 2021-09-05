@@ -2,10 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Details from "./pages/Details";
 import Search from "./pages/Search";
+import "./App.css";
 
 function App() {
-  //let match = useRouteMatch();
-
   return (
     <Router>
       <div>

@@ -21,7 +21,6 @@ export default function Details() {
         return res.json();
       })
       .then((res) => {
-        console.log(res.product);
         setProductData(res.product);
       });
   }
@@ -29,6 +28,8 @@ export default function Details() {
   useEffect(() => {
     getProduct();
   }, []);
+
+  console.log(productData);
 
   return (
     <div className="container">

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import SearchResult from "../components/SearchResult";
 
 export default function Search() {
@@ -27,29 +26,33 @@ export default function Search() {
 
   return (
     <div className="container">
-      <input
-        type="text"
-        value={searchValue}
-        onChange={(e) => {
-          setSearchValue(e.target.value);
-        }}
-      />
-      <button
-        onClick={() => {
-          getResults();
-        }}
-      >
-        Rechercher
-      </button>
-      <ul>
-        {searchResults.map((result) => {
-          return (
-            <li key={result.id}>
-              <SearchResult result={result} />
-            </li>
-          );
-        })}
-      </ul>
+      <div className="search">
+        <input
+          type="text"
+          value={searchValue}
+          onChange={(e) => {
+            setSearchValue(e.target.value);
+          }}
+        />
+        <button
+          onClick={() => {
+            getResults();
+          }}
+        >
+          Rechercher
+        </button>
+      </div>
+      <div className="results">
+        <ul>
+          {searchResults.map((result) => {
+            return (
+              <li key={result.id} className="result-item">
+                <SearchResult result={result} />
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 }
